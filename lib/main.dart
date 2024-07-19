@@ -9,6 +9,7 @@ void main() {
     ToastificationWrapper(
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
+        title: "Smart Email Generator",
         home: SplashPage(),
       ),
     ),
