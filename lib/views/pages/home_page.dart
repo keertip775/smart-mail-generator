@@ -214,38 +214,43 @@ length:${names[selectednamesIndex]}
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.all(15.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SelectableText(output),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
-                                      children: [
-                                        IconButton(
-                                          onPressed: () {
-                                            Share.share(output);
-                                          },
-                                          icon: const Icon(
-                                            Icons.share,
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SelectableText(output),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceAround,
+                                        children: [
+                                          IconButton(
+                                            onPressed: () {
+                                              Share.share(output);
+                                            },
+                                            icon: const Icon(
+                                              Icons.share,
+                                            ),
                                           ),
-                                        ),
-                                        IconButton(
-                                          onPressed: () {
-                                            FlutterClipboard.copy(output).then(
-                                                (value) => toastification.show(
-                                                    context: context,
-                                                    autoCloseDuration:
-                                                        Duration(seconds: 3),
-                                                    title: Text("copied")));
-                                          },
-                                          icon: Icon(
-                                            Icons.copy,
+                                          IconButton(
+                                            onPressed: () {
+                                              FlutterClipboard.copy(output)
+                                                  .then((value) =>
+                                                      toastification.show(
+                                                          context: context,
+                                                          autoCloseDuration:
+                                                              Duration(
+                                                                  seconds: 3),
+                                                          title:
+                                                              Text("copied")));
+                                            },
+                                            icon: Icon(
+                                              Icons.copy,
+                                            ),
                                           ),
-                                        ),
-                                      ],
-                                    )
-                                  ],
+                                        ],
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ));
                         });
